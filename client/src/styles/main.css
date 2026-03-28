@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark-900 text-white;
+  }
+}
+
+@layer components {
+  /* 按钮样式 */
+  .btn {
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-300;
+    @apply focus:outline-none focus:ring-2 focus:ring-gold-500 focus:ring-offset-2 focus:ring-offset-dark-900;
+  }
+
+  .btn-gold {
+    @apply bg-gradient-to-r from-gold-400 to-gold-600 text-dark-900;
+    @apply hover:from-gold-300 hover:to-gold-500 hover:scale-105;
+    @apply shadow-lg shadow-gold-500/20;
+  }
+
+  .btn-purple {
+    @apply bg-gradient-to-r from-purple-500 to-purple-700 text-white;
+    @apply hover:from-purple-400 hover:to-purple-600 hover:scale-105;
+    @apply shadow-lg shadow-purple-500/20;
+  }
+
+  .btn-outline {
+    @apply border-2 border-gold-500 text-gold-500;
+    @apply hover:bg-gold-500 hover:text-dark-900;
+  }
+
+  /* 卡片样式 */
+  .card {
+    @apply bg-dark-800 rounded-2xl p-6;
+    @apply border border-dark-700;
+    @apply hover:border-gold-500/30 hover:shadow-xl hover:shadow-gold-500/10;
+    @apply transition-all duration-300;
+  }
+
+  /* 输入框样式 */
+  .input {
+    @apply w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg;
+    @apply text-white placeholder-gray-400;
+    @apply focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500;
+    @apply transition-all duration-300;
+  }
+
+  /* 标题样式 */
+  .title-gradient {
+    @apply bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600;
+    @apply bg-clip-text text-transparent;
+  }
+
+  /* 加载动画 */
+  .spinner {
+    @apply w-8 h-8 border-4 border-gold-500/30 border-t-gold-500 rounded-full;
+    @apply animate-spin;
+  }
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0F0F1A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #F5C842;
+}
+
+/* 粒子背景 */
+.particles-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* 抽奖转盘 */
+.wheel-container {
+  position: relative;
+  width: 320px;
+  height: 320px;
+}
+
+.wheel {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 8px solid #D4AF37;
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.wheel-pointer {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 40px solid #D4AF37;
+  z-index: 10;
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.8));
+}
+
+.wheel-spinning {
+  animation: spin 5s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(var(--spin-degrees, 1800deg));
+  }
+}
+
+/* 中奖公告滚动 */
+.winner-ticker {
+  overflow: hidden;
+}
+
+.winner-ticker-content {
+  display: flex;
+  animation: ticker 30s linear infinite;
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* 发光效果 */
+.glow-effect {
+  box-shadow:
+    0 0 20px rgba(212, 175, 55, 0.4),
+    0 0 40px rgba(212, 175, 55, 0.2),
+    0 0 60px rgba(212, 175, 55, 0.1);
+}
+
+/* 呼吸灯效果 */
+.breathing-glow {
+  animation: breathingGlow 3s ease-in-out infinite;
+}
+
+@keyframes breathingGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
+  }
+}
