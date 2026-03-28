@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(cp \"C:/Users/dell/AppData/Local/Temp/企业微信截图_17746732429974.png\" /tmp/shot1.png && cp \"C:/Users/dell/AppData/Local/Temp/企业微信截图_1774673269187.png\" /tmp/shot2.png && cp \"C:/Users/dell/AppData/Local/Temp/企业微信截图_17746733579453.png\" /tmp/shot3.png && cp \"C:/Users/dell/AppData/Local/Temp/企业微信截图_17746733782455.png\" /tmp/shot4.png)",
-      "Bash(python3 -c \"\nimport base64\nwith open\\('C:/Users/dell/AppData/Local/Temp/企业微信截图_17746732429974.png', 'rb'\\) as f:\n    data = base64.b64encode\\(f.read\\(\\)\\).decode\\(\\)\n    print\\('data:image/png;base64,' + data[:100]\\)\n\")"
-    ]
-  }
-}
